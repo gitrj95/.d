@@ -28,10 +28,6 @@
   (("C-c l" . org-store-link)
    ("C-c a" . org-agenda)))
 
-(use-package corg
-  :vc (:url "https://github.com/isamert/corg.el" :rev :newest)
-  :init (add-hook 'org-mode-hook #'corg-setup))
-
 (use-package denote
   :custom
   (denote-directory (expand-file-name notes-directory))
