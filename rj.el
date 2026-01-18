@@ -14,9 +14,9 @@
   (unless (file-directory-p expanded-f)
     (make-directory expanded-f)))
 
-(use-package ef-themes
-  :init (ef-themes-load-random)
-  :bind (("<f7>" . ef-themes-load-random)))
+(use-package doric-themes
+  :init (doric-themes-load-random)
+  :bind (("<f7>" . doric-themes-load-random)))
 
 (use-package org
   :custom
