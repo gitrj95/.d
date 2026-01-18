@@ -1,0 +1,20 @@
+name: File Size Check
+
+on: [push, pull_request]
+
+jobs:
+  check_file_size:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check file size
+        run: |
+          FILE_PATH="rj.el"
+          LINE_COUNT=$(wc -l < "$FILE_PATH")
+          echo "Line count for $FILE_PATH: $LINE_COUNT"
+          if [ "$LINE_COUNT" -gt 100 ]; then
+            echo "Error: File '$FILE_PATH' exceeds 100 lines."
+            exit 1
+          fi
