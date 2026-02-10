@@ -11,7 +11,7 @@ jobs:
 
       - name: Check file size
         run: |
-          FILE_PATH="rj.el"
+          FILE_PATH="home/.emacs"
           LINE_COUNT=$(wc -l < "$FILE_PATH")
           echo "Line count for $FILE_PATH: $LINE_COUNT"
           if [ "$LINE_COUNT" -gt 100 ]; then
